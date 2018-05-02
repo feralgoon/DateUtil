@@ -13,22 +13,27 @@ public class DateTimeUtil
     {
         boolean isHappyHour = false;
 
+        //if day of week is (1-4), or Monday through Thursday
         if (dateTime.getDayOfWeek().getValue() >= 1 && dateTime.getDayOfWeek().getValue() <= 4)
         {
-            if (dateTime.toLocalTime().isAfter(LocalTime.of(3,59,59)))
+            //if time of day is 4pm or after (calculated inclusive, so used 15:59:59)
+            if (dateTime.toLocalTime().isAfter(LocalTime.of(15,59,59)))
             {
-                if (dateTime.toLocalTime().isBefore(LocalTime.of(7,0)))
+                //if time of day is before 7pm
+                if (dateTime.toLocalTime().isBefore(LocalTime.of(19,0)))
                 {
                     isHappyHour = true;
                 }
             }
         }
-
+        //if day of week is (5), or Friday
         if (dateTime.getDayOfWeek().getValue() == 5)
         {
-            if (dateTime.toLocalTime().isAfter(LocalTime.of(3,59,59)))
+            //if time of day is 4pm or after (calculated inclusive, so used 15:59:59)
+            if (dateTime.toLocalTime().isAfter(LocalTime.of(15,59,59)))
             {
-                if (dateTime.toLocalTime().isBefore(LocalTime.of(6,0)))
+                //if time of day is before 6pm
+                if (dateTime.toLocalTime().isBefore(LocalTime.of(18,0)))
                 {
                     isHappyHour = true;
                 }
