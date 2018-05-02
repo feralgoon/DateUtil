@@ -51,7 +51,7 @@ public class DateUtil
             return LocalDate.of(date.getYear(),12,25);
         }
         return LocalDate.of(date.getYear()+1,12,25);
-        //return LocalDate.of(date.plusYears(1).getYear(),12,25);
+        //return LocalDate.of(date.plusYears(1).getYear(),12,25); <--- could use this instead of previous line
     }
 
     //Return the number of days until Christmas

@@ -16,6 +16,10 @@ class DateTimeUtilTest
     private static final LocalDateTime HAPPY_HOUR_END_THU = LocalDateTime.of(2018,5,3,19,0);
     private static final LocalDateTime HAPPY_HOUR_START_TUE = LocalDateTime.of(2018,5,1,16,0);
     private static final LocalDateTime HAPPY_HOUR_SUNDAY = LocalDateTime.of(2018,4,29,16,0);
+    private static final LocalDateTime HAPPY_HOUR_TUESDAY = LocalDateTime.of(2018,5,1,17,45);
+    private static final LocalDateTime NOT_HAPPY_HOUR_WED = LocalDateTime.of(2018,5,2,5,0);
+
+
 
 
     @Test
@@ -29,6 +33,8 @@ class DateTimeUtilTest
         assertFalse(DateTimeUtil.isHappyHour(HAPPY_HOUR_END_THU));
         assertTrue(DateTimeUtil.isHappyHour(HAPPY_HOUR_START_TUE));
         assertFalse(DateTimeUtil.isHappyHour(HAPPY_HOUR_SUNDAY));
+        assertTrue(DateTimeUtil.isHappyHour(HAPPY_HOUR_TUESDAY));
+        assertFalse(DateTimeUtil.isHappyHour(NOT_HAPPY_HOUR_WED));
 
     }
 }
