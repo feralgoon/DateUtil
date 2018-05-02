@@ -58,11 +58,7 @@ public class DateUtil
     //If it is Christmas return the number of days until the next Christmas
     public static long getDaysUntilChristmas(LocalDate date)
     {
-        if (date.isBefore(LocalDate.of(date.getYear(),12,25)))
-        {
-            return date.until(LocalDate.of(date.getYear(),12,25),ChronoUnit.DAYS);
-        }
-        return date.until(LocalDate.of(date.getYear()+1,12,25),ChronoUnit.DAYS);
+        return date.until(DateUtil.getNextChristmas(date),ChronoUnit.DAYS);
     }
 
     //Return a array of twelve ints holding the number of days in each month
