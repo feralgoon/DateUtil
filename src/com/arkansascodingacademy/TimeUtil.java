@@ -10,6 +10,9 @@ public class TimeUtil
     {
         boolean afternoon = false;
 
+        if (time.isAfter(LocalTime.of(12,0)) && time.isBefore(LocalTime.of(16,0)))
+            afternoon = true;
+
         return afternoon;
     }
 
@@ -18,6 +21,9 @@ public class TimeUtil
     {
         boolean afterMidnight = false;
 
-        return afterMidnight;
+        if (time.isAfter(LocalTime.of(0,0)) && time.isBefore(LocalTime.of(4,0)))
+            afterMidnight = true;
+
+            return afterMidnight;
     }
 }
